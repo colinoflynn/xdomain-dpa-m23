@@ -1,0 +1,54 @@
+/**
+ * \file
+ *
+ * \brief IAR linker script (flash) for ATSAML11E16A
+ *
+ * Copyright (c) 2018 Microchip Technology Inc.
+ *
+ * \license_start
+ *
+ * \page License
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ * \license_stop
+ *
+ */
+
+/* Memory Spaces Definitions based on Memories Security Attribution:
+ * BOOTPROT = 0x00
+ * AS       = 0x40
+ * ANSC     = 0x20
+ * RS       = 0x10
+ */
+
+define memory mem with size = 4G;
+define region ROM_S_region    = mem:[from 0x00000000 to 0x00003BFF];
+define region ROM_NSC_region  = mem:[from 0x00003C00 to 0x00003FFF];
+define region RAM_S_region    = mem:[from 0x20000000 to 0x200007FF];
+define region NVM_user_page_region   = mem:[from 0x00804000 to 0x008040FF];
+
+define block CSTACK with alignment = 8, size = 0x400    { };
+define block HEAP   with alignment = 8, size = 0x200    { };
+
+initialize by copy { readwrite };
+do not initialize  { section .noinit };
+
+place at address mem:0                          { readonly section .intvec };
+place in ROM_S_region                           { readonly };
+place in ROM_NSC_region                         { section Veneer$$CMSE };
+place in RAM_S_region                           { readwrite, block HEAP };
+place at end of RAM_S_region                    { block CSTACK };
+place in NVM_user_page_region                   { readonly section .nvm_user_page };

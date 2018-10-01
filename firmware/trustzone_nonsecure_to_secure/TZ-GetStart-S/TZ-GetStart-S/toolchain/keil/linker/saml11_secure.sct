@@ -1,0 +1,54 @@
+; \brief Keil MDK Scatter-Loading Description File (flash) for ATSAML11E16A
+;
+; Copyright (c) 2018 Microchip Technology Inc.
+;
+; \license_start
+;
+; \page License
+;
+; SPDX-License-Identifier: Apache-2.0
+;
+; Licensed under the Apache License, Version 2.0 (the "License");
+; you may not use this file except in compliance with the License.
+; You may obtain a copy of the License at
+;
+;   http://www.apache.org/licenses/LICENSE-2.0
+;
+; Unless required by applicable law or agreed to in writing, software
+; distributed under the License is distributed on an "AS IS" BASIS,
+; WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+; See the License for the specific language governing permissions and
+; limitations under the License.
+;
+; \license_stop
+
+; Memory Spaces Definitions based on Memories Security Attribution:
+; BOOTPROT = 0x00
+; AS       = 0x40
+; ANSC     = 0x20
+; RS       = 0x10
+
+LR_ROM_S 0x00000000 0x00003C00  {   ; load region size_region
+  ER_ROM_S 0x00000000 0x00003C00  { ; load address = execution address
+   *.o (RESET, +First)
+   *(InRoot$$Sections)
+
+   .ANY (+RO)
+   .ANY (+XO)
+  }
+  RW_RAM_S 0x20000000 0x00000800  { ; RW data
+   .ANY (+RW +ZI)
+  }
+}
+
+LR_ROM_NSC 0x00003C00 0x00000400  {   ; load region size_region
+  ER_ROM_NSC 0x00003C00 0x00000400  {  ; load address = execution address
+    *(Veneer$$CMSE)
+  }
+}
+
+LR_NVM_USER_PAGE 0x00804000 0x00000100  {    ; load region size_region
+  ER_NVM_USER_PAGE 0x00804000 0x00000100  {  ; load address = execution address
+   *(.userrowsec)
+  }
+}
