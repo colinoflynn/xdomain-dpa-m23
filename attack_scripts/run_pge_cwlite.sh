@@ -1,0 +1,5 @@
+python3 run_test_pge_cwlite.py settings_cwlite
+python3 run_test_pge_cwlite.py settings_cwlite_1_16
+python3 run_test_pge_cwlite.py settings_cwlite_1_32
+python3 run_test_pge_cwlite.py settings_cwlite_1_64
+python3 run_test_pge_cwlite.py settings_cwlite_1_104

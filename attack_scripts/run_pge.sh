@@ -1,0 +1,16 @@
+python3 run_test_pge.py settings_boarda_4_shunt
+python3 run_test_pge.py settings_boarda_5_shunt
+python3 run_test_pge.py settings_boarda_6_shunt
+python3 run_test_pge.py settings_boarda_7_shunt
+python3 run_test_pge.py settings_boarda_8_shunt
+python3 run_test_pge.py settings_boarda_9_shunt
+python3 run_test_pge.py settings_boarda_10_shunt
+python3 run_test_pge.py settings_boarda_11_shunt
+python3 run_test_pge.py settings_boarda_12_shunt
+python3 run_test_pge.py settings_boarda_13_shunt
+python3 run_test_pge.py settings_boarda_14_shunt
+python3 run_test_pge.py settings_boarda_15_shunt
+python3 run_test_pge.py settings_boarda_16_shunt
+python3 run_test_pge.py settings_boarda_17_shunt
+python3 run_test_pge.py settings_boarda_18_shunt
+python3 run_test_pge.py settings_boarda_19_shunt
