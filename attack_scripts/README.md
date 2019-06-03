@@ -1,10 +1,20 @@
 This directory contains files used in combination with LASCAR to perform CPA attacks.
 
+## Required Computer
+
+Note these scripts were run on a Dell R610 server with:
+* Intel(R) Xeon(R) CPU X5650  @ 2.67GHz, 24-cores
+* 48 GB Memory
+
+Because of the high core & memory count, most of the scripts are designed to load this machine by running each subkey on a separate core & loading the entire trace-set into memory in one go. If you run the scripts on a laptop as-is you will probably be very sad with how your machine performs, you should change them to not attempt running all subkeys at once.
+
+Alternatively, you could use a cloud computer which would cost a few dollars (especially if you use a preemptible instance).
+
 ## Run Scripts
 
-The `.sh` files are scripts used to run the attacks. These will take as input a number of `.npy` trace files (can be downloaded from open server), and generates a bunch of `.pickle` files which contain the specific correlation results for every guess of every subkey at the requested points. Note you will need to further post-processing the correlation output (described below) to get the actual PGE type information/graphs.
+The `.sh` files are scripts used to run the attacks. These will take as input a number of `.npy` trace files (can be downloaded from open trace set links given in other directory), and generates a bunch of `.pickle` files which contain the specific correlation results for every guess of every subkey at the requested points. Note you will need to further post-processing the correlation output (described below) to get the actual PGE information/graphs.
 
-The `settings` files are python scripts which will be imported by the analaysis algorithm, and define specifically the input traces along with any settings and preprocessing.
+The `settings` files are python scripts which will be imported by the analysis algorithm, and define specifically the input traces along with any settings and preprocessing.
 
 The file `run_list.sh` is most interesting probably, as was used for the majority of the attack generation. It calls `run_test.py`, which is used when attacking the full traces for the cross-domain attacks.
 
@@ -65,4 +75,4 @@ The variable names will be used by the main analysis file, so cannot be changed.
 
 ## Parsing the Pickle Files
 
-As mentioned, the pickle files contain raw CPA attack output. No PGE or other information is contained. Instead we use Python notebooks (see other directory) to perform analysis of the raw results.
+As mentioned, the pickle files contain raw CPA attack output. No PGE or other information is contained. Instead we use Python notebooks (see `notebooks` directory) to perform analysis of the raw results.
