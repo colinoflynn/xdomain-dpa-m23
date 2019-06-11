@@ -4,6 +4,8 @@ This repository contains supporting code for the paper "On-Device Power Analysis
 
 The trace links are provided in the traces/README.md file.
 
+You can find the paper PDF at https://eprint.iacr.org/2019/689.pdf .
+
 ## Abstract (Partially from paper)
 
 New cores released (2018/2019) now bring the idea of hardware security domains to small low-cost devices. The first device released in this category was the Microchip SAML11, which features the M23 core.
@@ -24,7 +26,7 @@ This github repository includes information & code required to replicate results
 
 ## Referencing this work
 
-Please do not reference this GITHub repo. Instead reference the paper, link to E-Print version here: TODO
+Please do not reference this GITHub repo. Instead reference the paper, link to E-Print version here: https://eprint.iacr.org/2019/689 .
 
 ## Directory Listing
 
