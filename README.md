@@ -26,7 +26,7 @@ This github repository includes information & code required to replicate results
 
 ## Referencing this work
 
-Please do not reference this GITHub repo. Instead reference the paper, link to E-Print version here: https://eprint.iacr.org/2019/689 .
+Please do not reference this GITHub repo. Instead reference the paper, link to E-Print version here: https://eprint.iacr.org/2019/689 (to appear in TCHES Volume 2019, Issue 1).
 
 ## Directory Listing
 
@@ -34,3 +34,8 @@ Please do not reference this GITHub repo. Instead reference the paper, link to E
  * `firmware` This directory contains the firmware attacked.
  * `traces` This directory contains more details of the trace format & links to the traces.
  * `attack_scripts` The actual CPA attacks are done as Python scripts. This directory contains the scripts.
+
+## Attack Script & Thanks
+
+This work uses Lascar (https://github.com/Ledger-Donjon/lascar) extensively for performing the CPA attack. See PDF paper for acknowledgements.
+
