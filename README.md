@@ -26,7 +26,7 @@ This github repository includes information & code required to replicate results
 
 ## Referencing this work
 
-Please do not reference this GITHub repo. Instead reference the paper, link to E-Print version here: https://eprint.iacr.org/2019/689 (to appear in TCHES Volume 2019, Issue 1).
+Please do not reference this GITHub repo. Instead reference the paper, link to E-Print version here: https://eprint.iacr.org/2019/689 (to appear in TCHES Volume 2019, Issue 4).
 
 ## Directory Listing
 
